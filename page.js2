@@ -1,0 +1,8 @@
+(d=>{
+	const once=(e,s,c)=>{const i=o=>{e.removeEventListener(s,i);c(o)};e.addEventListener(s,i)};
+	(c=>{if(d.readyState!=='complete'){once(d,'DOMContentLoaded',c)}else{c({target:d})}})(evt=>{
+		const d=evt.target,w=d.defaultView;
+		
+		console.log('done');
+	})
+})(document);
