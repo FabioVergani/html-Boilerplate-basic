@@ -1,0 +1,16 @@
+(w=>{
+	const d=w.document,
+	once=(e,s,c)=>{
+		const x=o=>{e.removeEventListener(s,x);c(o)};
+		e.addEventListener(s,x)
+	},
+	ƒ=d=>{
+		console.log('loaded');
+		//...
+	};
+	if(d.readyState!=='complete'){
+		once(w,'load',o=>{ƒ(o.target)})
+	}else{
+		ƒ(d)
+	}
+})(window);
